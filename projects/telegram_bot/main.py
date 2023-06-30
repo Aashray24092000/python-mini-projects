@@ -1,6 +1,4 @@
-'''
-    BOT FOR TELEGRAM
-'''
+
 
 import random
 import logging
