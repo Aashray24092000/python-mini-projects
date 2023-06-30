@@ -14,7 +14,7 @@ def watermark_photo(input_image_path,watermark_image_path,output_image_path):
 
     new_position = position[0]-newsize[0]-20,position[1]-newsize[1]-20
     # create a new transparent image
-    transparent = Image.new(mode='RGBA',size=position,color=(0,0,0,0))
+    transparent = Image.new(mode='RGBA',size=position,color=(1,0,1,0))
     # paste the original image
     transparent.paste(base_image,(0,0))
     # paste the watermark image
@@ -40,6 +40,6 @@ if not os.path.isdir("output"):
 c = 1
 for f in files:
     if os.path.isfile(os.path.abspath(f)):
-        if f.endswith(".png") or f.endswith(".jpg"):
+        if f.endswith(".png") or f.endswith(".jpg") or f.endswith(".pdf"):
             watermark_photo(f,watermark,"output/"+f)
 
